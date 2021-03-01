@@ -25,7 +25,7 @@ public class TestMain {
                 target.getClass().getInterfaces(), handler);
 
         //使用代理对象调用方法，实现功能增强
-        // proxy.doSome();
-        proxy.doOther();
+        proxy.doSome();
+        // proxy.doOther();
     }
 }
