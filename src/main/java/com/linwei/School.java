@@ -8,7 +8,7 @@ public class School {
     private String addr;
 
     public School() {
-        System.out.println("School无参构造执行！");
+        // System.out.println("School无参构造执行！");
     }
 
     public School(String name, String addr) {
@@ -17,12 +17,12 @@ public class School {
     }
 
     public void setName(String name) {
-        System.out.println("-----?" + name);
+        // System.out.println("-----?" + name);
         this.name = name;
     }
 
     public void setAddr(String addr) {
-        System.out.println("------->" + addr);
+        // System.out.println("------->" + addr);
         this.addr = addr;
     }
 

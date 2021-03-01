@@ -3,22 +3,22 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--<bean id="student" class="com.linwei.Student">
-        <property name="name" value="linwei" />
-        <property name="age" value="24"/>
-        <property name="email" value="lw@qq.com"/>
-        <property name="school" ref="school"/>
-    </bean>-->
+    <bean id="student" class="com.linwei.Student" autowire="byName">
+        <property name="name" value="ls" />
+        <property name="age" value="21"/>
+        <property name="email" value="lwwww@qq.com"/>
+        <!--<property name="school" ref="myschool"/>-->
+    </bean>
 
-    <bean id="student" class="com.linwei.Student">
+    <!--<bean id="student" class="com.linwei.Student">
         <constructor-arg name="name" value="hhh"/>
         <constructor-arg name="age" value="33"/>
         <constructor-arg name="school" ref="school"/>
-    </bean>
+    </bean>-->
 
     <bean id="school" class="com.linwei.School">
-        <property name="name" value="华德ddddd"/>
-        <property name="addr" value="哈尔滨dddd"/>
+        <property name="name" value="武大"/>
+        <property name="addr" value="武汉"/>
     </bean>
 
 

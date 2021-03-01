@@ -15,8 +15,8 @@ public class TestMain {
         String config = "applicationContext.xml";
         ApplicationContext ac = new ClassPathXmlApplicationContext(config);
 
+        //从容器中获取student对象
         Student student = (Student) ac.getBean("student");
-
         System.out.println(student);
 
     }
