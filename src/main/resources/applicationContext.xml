@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--声明目标类对象-->
-    <bean id="someService" class="com.linwei.service.impl.SomeServiceImpl"/>
+    <!--<bean id="someService" class="com.linwei.service.impl.SomeServiceImpl"/>-->
     <!--声明切面类对象-->
-    <bean id="myAspect" class="com.linwei.aspect.MyAspect"/>
+    <!--<bean id="myAspect" class="com.linwei.aspect.MyAspect"/>-->
     <!--声明自动代理生成器-->
+
+    <!--声明组件扫描器-->
+    <context:component-scan base-package="com.linwei.aspect"/>
+    <context:component-scan base-package="com.linwei.service"/>
     <aop:aspectj-autoproxy />
 </beans>

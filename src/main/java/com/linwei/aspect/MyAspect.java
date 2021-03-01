@@ -2,11 +2,13 @@ package com.linwei.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
 
 /**
  * @date 2021/3/1 17:18
  */
 @Aspect
+@Component("myAspect")
 public class MyAspect {
 
     //最完整的切入点表达式 execution(访问权限 返回值 方法声明(参数) 异常类型)
