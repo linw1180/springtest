@@ -5,8 +5,12 @@ package com.linwei;
  */
 public class Student {
 
+    private String name;
+    private int age;
+    private School school;
+
     public Student() {
-        System.out.println("Student的无参构造执行！");
+        // System.out.println("Student的无参构造执行！");
     }
 
     public Student(String name, int age, School school) {
@@ -15,17 +19,15 @@ public class Student {
         this.school = school;
     }
 
-    private String name;
-    private int age;
-    private School school;
+
 
     public void setName(String name) {
-        System.out.println("setName() ==============" + name);
+        // System.out.println("setName() ==============" + name);
         this.name = name;
     }
 
     public void setAge(int age) {
-        System.out.println("setAge() ==============" + age);
+        // System.out.println("setAge() ==============" + age);
         this.age = age;
     }
 
