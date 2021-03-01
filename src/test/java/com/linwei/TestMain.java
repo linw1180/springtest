@@ -1,12 +1,9 @@
 package com.linwei;
 
-import com.linwei.handler.MyInvocationHandler;
 import com.linwei.service.SomeService;
-import com.linwei.service.impl.SomeServiceImpl;
 import org.junit.Test;
-
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @date 2021/2/28 23:56
@@ -16,16 +13,12 @@ public class TestMain {
     @Test
     public void test01(){
 
-        //目标对象
-        SomeService target = new SomeServiceImpl();
-        //InvocationHandler接口实现类
-        InvocationHandler handler = new MyInvocationHandler(target);
-        //动态代理方式获取代理对象
-        SomeService proxy = (SomeService) Proxy.newProxyInstance(target.getClass().getClassLoader(),
-                target.getClass().getInterfaces(), handler);
+        String config = "applicationContext.xml";
+        ApplicationContext ac = new ClassPathXmlApplicationContext(config);
 
-        //使用代理对象调用方法，实现功能增强
-        proxy.doSome();
-        // proxy.doOther();
+        //从spring容器（Map）取目标对象（代理类对象）
+        SomeService proxy = (SomeService) ac.getBean("someService");
+        //通过代理类对象执行方法，实现功能增强
+        proxy.doSome("test", 24);
     }
 }

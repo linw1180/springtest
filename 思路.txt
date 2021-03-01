@@ -1,31 +1,15 @@
 
-动态代理实现功能增强！
+使用aspectJ框架实现AOP：
 
-1、创建InvocationHandler接口实现类，在重写的invoke()方法中调用method.invoke(...)方法，
-此操作相当于目标对象调用其相应方法，只不过这里是代理对象进行的调用。
+使用AOP：目的是给已经存在的一些类和方法，增加额外的功能。前提是不改变原来的类的代码。
 
-2、在method.invoke(...)方法调用前后可以进行其他的功能设计，称为功能增强。
+思路：
+1、新建maven项目，加入spring，aspectJ，Junit等依赖，整理项目结构
 
-3、最后返回方法调用结果。
+2、创建示例接口以及其实现类（该实现类作为需要增加切面功能的目标对象）
 
-4、创建测试类，获取目标对象和InvocationHandler接口实现类对象，
-使用Proxy.newProxyInstance(...)方法得到代理对象，最后进行方法的调用。
+3、创建一个普通类，使用相关注解，作为切面类，为目标对象增加功能。
 
+4、在主配置文件中声明各对象和 自动代理生成器
 
-下面是测试类：
-----------------------------------------------------------------------
-@Test
-    public void test01(){
-
-        //目标对象
-        SomeService target = new SomeServiceImpl();
-        //InvocationHandler接口实现类
-        InvocationHandler handler = new MyInvocationHandler(target);
-        //动态代理方式获取代理对象
-        SomeService proxy = (SomeService) Proxy.newProxyInstance(target.getClass().getClassLoader(),
-                target.getClass().getInterfaces(), handler);
-
-        //使用代理对象调用方法，实现功能增强
-        proxy.doSome();
-        // proxy.doOther();
-    }
+5、创建测试类，从spring容器获取目标对象（此时已经是功能增前后的代理对象），调用方法进行测试

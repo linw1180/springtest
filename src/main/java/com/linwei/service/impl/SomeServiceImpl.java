@@ -3,16 +3,11 @@ package com.linwei.service.impl;
 import com.linwei.service.SomeService;
 
 /**
- * @date 2021/3/1 15:04
+ * @date 2021/3/1 17:17
  */
 public class SomeServiceImpl implements SomeService {
-    @Override
-    public void doSome() {
-        System.out.println("----->doSome()");
-    }
 
-    @Override
-    public void doOther() {
-        System.out.println("----->doOther()");
+    public void doSome(String name, Integer age) {
+        System.out.println("目标方法执行！");
     }
 }
