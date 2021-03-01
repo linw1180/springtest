@@ -12,4 +12,4 @@ xml配置文件给属性赋值：
 set注入：需要对象有无参构造，set()方法重写toString()
 构造注入：需要对象有有参构造，重写toString()
 
-自动注入：需要id与属性名相同
+自动注入：autowire byName buType  需要id与属性名相同

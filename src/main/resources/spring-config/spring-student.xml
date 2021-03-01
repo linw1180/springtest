@@ -3,10 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="student" class="com.linwei.Student" autowire="byName">
-        <property name="name" value="ls" />
-        <property name="age" value="21"/>
-        <property name="email" value="lwwww@qq.com"/>
+    <bean id="student" class="com.linwei.Student" autowire="byType">
+        <property name="name" value="张紫薇" />
+        <property name="age" value="23"/>
+        <property name="email" value="zzw@163.com"/>
         <!--<property name="school" ref="myschool"/>-->
     </bean>
 
@@ -15,11 +15,6 @@
         <constructor-arg name="age" value="33"/>
         <constructor-arg name="school" ref="school"/>
     </bean>-->
-
-    <bean id="school" class="com.linwei.School">
-        <property name="name" value="武大"/>
-        <property name="addr" value="武汉"/>
-    </bean>
 
 
 </beans>

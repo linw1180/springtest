@@ -12,7 +12,7 @@ public class TestMain {
     @Test
     public void test01(){
 
-        String config = "applicationContext.xml";
+        String config = "spring-config/total.xml";
         ApplicationContext ac = new ClassPathXmlApplicationContext(config);
 
         //从容器中获取student对象
