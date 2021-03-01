@@ -1,0 +1,8 @@
+
+1、maven构建quickstart简单java项目，完善目录结构，加入spring依赖和junt单元测试以来
+
+2、创建接口和其实现类（用来测试spring容器创建对象）
+
+3、配置spring主配置文件，指定需创建类对象的 id 和全限定路径
+
+4、进行测试，获取朱配置文件位置，获取ApplicationContext容器对象，调用其方法从容器中以Map方式获取对象
